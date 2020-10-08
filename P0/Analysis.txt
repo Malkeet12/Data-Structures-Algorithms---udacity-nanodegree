@@ -1,0 +1,11 @@
+Run time analysis for each task
+
+Task0 : O(1)  ## output time  doesn't increase even if the input list grows
+
+Task1 : O(n)  ## we are iterating through each item in the list to check for unique numbers
+
+Task2:  O(n)  ## we are iterating through each item in the list to check for call with longest duration
+
+Task3:  O(n)  ## we are iterating through each item in the list for finding area codes and mobile prefixes
+
+Task4:  O(n)  ## we are iterating through each item in the list for finding telemarketers
