@@ -11,14 +11,6 @@ with open('texts.csv', 'r') as f:
 with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
-    telemarketers = []
-    for item in calls:
-        if item[0].startswith('140') and item[0] not in telemarketers:
-            telemarketers.append(item[0])
-    telemarketers.sort()
-    print("These numbers could be telemarketers:")
-    for item in telemarketers:
-        print(item)
 
 """
 TASK 4:
@@ -32,3 +24,28 @@ Print a message:
 <list of numbers>
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
+
+
+def find_telemarketers():
+    telemarketers = []
+    for item in calls:
+        if item[0] not in telemarketers:
+            telemarketers.append(item[0])
+
+    for item in calls:
+        if item[1] in telemarketers:
+            telemarketers.remove(item[1])
+
+    for item in texts:
+        if item[0] in telemarketers:
+            telemarketers.remove(item[0])
+        if item[1] in telemarketers:
+            telemarketers.remove(item[1])
+    telemarketers.sort()
+    print("These numbers could be telemarketers:")
+
+    for item in telemarketers:
+        print(item)
+
+
+find_telemarketers()

@@ -14,14 +14,12 @@ with open('calls.csv', 'r') as f:
 
 
 def find_unique_numbers():
-    unique_numbers = []
+    unique_numbers = set()
     # merge two lists
     record = texts + calls
     for item in record:
-        if item[0] not in unique_numbers:
-            unique_numbers.append((item[0]))
-        if item[1] not in unique_numbers:
-            unique_numbers.append((item[1]))
+        unique_numbers.add(item[0])
+        unique_numbers.add(item[1])
     print("There are {} different telephone numbers in the records.".format(len(unique_numbers)))
 
 
