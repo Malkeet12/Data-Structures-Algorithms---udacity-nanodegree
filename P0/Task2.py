@@ -37,18 +37,17 @@ def find_max_duration(numbers):
 def find_number():
     unique_numbers = {}
     for item in calls:
-        if item[0] not in unique_numbers:
-            unique_numbers[item[0]] = int(item[3])
-        elif item[0] in unique_numbers:
+        if unique_numbers.get(item[0]):
             unique_numbers[item[0]] = unique_numbers[item[0]] + int(item[3])
+        else:
+            unique_numbers[item[0]] = int(item[3])
 
-        if item[1] not in unique_numbers:
-            unique_numbers[item[1]] = int(item[3])
-        elif item[1] in unique_numbers:
+        if unique_numbers.get(item[1]):
             unique_numbers[item[1]] = unique_numbers[item[1]] + int(item[3])
+        else:
+            unique_numbers[item[1]] = int(item[3])
 
     find_max_duration(unique_numbers)
 
 
 find_number()
-

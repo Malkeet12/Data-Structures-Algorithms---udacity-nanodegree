@@ -1,11 +1,24 @@
 Run time analysis for each task
 
-Task0 : O(1)  ## output time  doesn't increase even if the input list grows
+Task0 : T(1) =>  O(1) means the time is constant
 
-Task1 : O(n)  ## we are iterating through each item in the list to check for unique numbers
+Task1 : T(n) => O(n) means time is linear.
+## we are iterating through each item in the list to check for unique numbers
 
-Task2:  O(n)  ## we are iterating through each item in the list to check for call with longest duration
 
-Task3:  O(n)  ## we are iterating through each item in the list for finding area codes and mobile prefixes
+Task2 :T(n) => O(n) means time is linear.
+ we have two for loops (not nested)
+ T(n) = n + n,
+ T(n) = O(n)
 
-Task4:  O(n)  ## we are iterating through each item in the list for finding telemarketers
+
+Task3 : T(n) = O(nlogn) => O(nlogn) means time is Quasilinear
+ we have used sorted function that has a time complexity of nlogn in both average and worst case
+ T(n) = n + nlogn,
+ T(n) = O(nlogn)
+
+
+Task4: T(n) = O(nlogn) => O(nlogn) means time is Quasilinear
+ we have to iterate 3 times and we have used sorted function that has a time complexity of nlogn in both average and worst case
+ T(n) = n + n + n + nlogn,
+ T(n) = O(nlogn)
