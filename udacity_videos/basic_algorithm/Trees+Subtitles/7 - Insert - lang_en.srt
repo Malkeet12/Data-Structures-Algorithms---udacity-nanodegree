@@ -1,0 +1,140 @@
+1
+00:00:00,000 --> 00:00:05,049
+Inserting an element into our tree when it has no order is relatively easy.
+
+2
+00:00:05,049 --> 00:00:07,750
+We'll just tuck our node onto another node.
+
+3
+00:00:07,750 --> 00:00:11,905
+Maybe it's a leaf or maybe it's a parent with only one child.
+
+4
+00:00:11,904 --> 00:00:15,924
+We only need to make sure that we're obeying the two children rule.
+
+5
+00:00:15,925 --> 00:00:18,699
+We're given the root at the beginning and we'll need to
+
+6
+00:00:18,699 --> 00:00:21,969
+keep moving down the tree until we find an open spot.
+
+7
+00:00:21,969 --> 00:00:24,829
+How long will it take to find an open spot?
+
+8
+00:00:24,829 --> 00:00:30,459
+The worst case is that we travel down the longest path until we find the farthest leaf.
+
+9
+00:00:30,460 --> 00:00:35,259
+In that case, we'll travel through the number of nodes equal to the height of the tree.
+
+10
+00:00:35,259 --> 00:00:37,969
+But what is the height of a binary tree?
+
+11
+00:00:37,969 --> 00:00:40,064
+Like we did with our sorting algorithms,
+
+12
+00:00:40,064 --> 00:00:42,714
+let's look at some examples and reason through it.
+
+13
+00:00:42,715 --> 00:00:44,885
+Here are two different trees.
+
+14
+00:00:44,884 --> 00:00:47,119
+We can call these perfect trees,
+
+15
+00:00:47,119 --> 00:00:51,709
+since every node except the leaves on the last level has two children.
+
+16
+00:00:51,710 --> 00:00:56,734
+It looks like this tree with three nodes has two levels,
+
+17
+00:00:56,734 --> 00:01:02,109
+and this one has seven nodes and one, two, three levels.
+
+18
+00:01:02,109 --> 00:01:03,625
+As the tree grows bigger,
+
+19
+00:01:03,625 --> 00:01:08,795
+each new level has the capacity to hold a number of nodes equivalent to a power of two,
+
+20
+00:01:08,795 --> 00:01:11,359
+mull over that first a second.
+
+21
+00:01:11,359 --> 00:01:14,439
+Each node can have two children,
+
+22
+00:01:14,439 --> 00:01:18,935
+so each new level can have twice as many nodes as the one before it.
+
+23
+00:01:18,935 --> 00:01:22,129
+Since we've gone back to talking about powers of two,
+
+24
+00:01:22,129 --> 00:01:24,530
+your mind should jump to login.
+
+25
+00:01:24,530 --> 00:01:27,769
+Does that apply here? Let's take a look.
+
+26
+00:01:27,769 --> 00:01:31,609
+The number of levels increases near a power of two,
+
+27
+00:01:31,609 --> 00:01:35,015
+and now we have a good visualization to understand why.
+
+28
+00:01:35,015 --> 00:01:38,719
+At every level, we're adding roughly twice as many elements.
+
+29
+00:01:38,719 --> 00:01:44,510
+Every time we need to add a new level or in a binary search divider array and other term,
+
+30
+00:01:44,510 --> 00:01:50,314
+it's because we're giving ourselves the space to allow for about twice as many elements.
+
+31
+00:01:50,314 --> 00:01:53,974
+Remember that we're adding a power of two at each level,
+
+32
+00:01:53,974 --> 00:01:56,000
+so when we count up the nodes overall,
+
+33
+00:01:56,000 --> 00:01:58,579
+it won't be exactly a power of two.
+
+34
+00:01:58,579 --> 00:02:03,140
+Having three levels doesn't mean an overall node count of eight,
+
+35
+00:02:03,140 --> 00:02:07,230
+but it does mean that the fourth level itself will have eight elements in it.
+
