@@ -167,6 +167,22 @@ def in_order(tree):
     return visit_order
 
 
+def pre_order_iterative(tree):
+    visit_order = list()
+    root = tree.get_root()
+    stack = [root]
+    while len(stack) > 0:
+        node = stack.pop()
+        if node.right:
+            stack.append(node.right)
+        visit_order.append(node.value)
+        if node.left:
+            stack.append(node.left)
+
+
+    return visit_order
+
+
 # create a tree and add some nodes
 tree = Tree("apple")
 tree.get_root().set_left_child(Node("banana"))
@@ -174,3 +190,4 @@ tree.get_root().set_right_child(Node("cherry"))
 tree.get_root().get_left_child().set_left_child(Node("dates"))
 print(pre_order(tree))
 print(in_order(tree))
+print(pre_order_iterative(tree))
