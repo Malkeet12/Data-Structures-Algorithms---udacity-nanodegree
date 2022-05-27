@@ -1,0 +1,40 @@
+1
+00:00:00,000 --> 00:00:03,000
+Divide and conquer algorithms or recursive algorithms,
+
+2
+00:00:03,000 --> 00:00:06,015
+is one of the first algorithmic tools that many of you may have learned.
+
+3
+00:00:06,014 --> 00:00:08,580
+For example, binary search or merge sort.
+
+4
+00:00:08,580 --> 00:00:10,560
+To see the power of divide and conquer,
+
+5
+00:00:10,560 --> 00:00:12,195
+we'll look at a fundamental problem.
+
+6
+00:00:12,195 --> 00:00:15,405
+Given N numbers, we'd like to find the median element.
+
+7
+00:00:15,404 --> 00:00:16,829
+The numbers are unsorted,
+
+8
+00:00:16,829 --> 00:00:18,389
+so they are in arbitrary order.
+
+9
+00:00:18,390 --> 00:00:21,300
+Can we find the median without first sorting the list?
+
+10
+00:00:21,300 --> 00:00:25,320
+We'll look at a really ingenious divide and conquer algorithm to do just that.
+

@@ -1,0 +1,148 @@
+1
+00:00:00,000 --> 00:00:03,899
+Now we're going to prove that this P that we chose is in fact a good pivot.
+
+2
+00:00:03,899 --> 00:00:05,879
+Now let's assume this fact for now,
+
+3
+00:00:05,879 --> 00:00:08,535
+and then let's look at the running time of this algorithm.
+
+4
+00:00:08,535 --> 00:00:10,859
+Let's look at the running time step by step.
+
+5
+00:00:10,859 --> 00:00:15,500
+The first step, breaking A into these n over five groups. How long does that take?
+
+6
+00:00:15,500 --> 00:00:18,660
+Well, that just takes one swipe through the array A,
+
+7
+00:00:18,660 --> 00:00:20,399
+so that takes order n time.
+
+8
+00:00:20,399 --> 00:00:22,184
+Now we have to sort each group.
+
+9
+00:00:22,184 --> 00:00:24,099
+How long does it take to sort one of these groups?
+
+10
+00:00:24,100 --> 00:00:25,575
+Well, it's only five elements.
+
+11
+00:00:25,574 --> 00:00:27,989
+So even if we use a super slow algorithm,
+
+12
+00:00:27,989 --> 00:00:29,489
+let's say five factorial,
+
+13
+00:00:29,489 --> 00:00:31,139
+we write down every permutation of
+
+14
+00:00:31,140 --> 00:00:33,994
+these five elements and choose the one which is sorted,
+
+15
+00:00:33,994 --> 00:00:35,729
+that's going to take us five factorial time,
+
+16
+00:00:35,729 --> 00:00:37,114
+which is still order one.
+
+17
+00:00:37,115 --> 00:00:39,395
+So it takes us order one time per group,
+
+18
+00:00:39,395 --> 00:00:41,000
+and there's order n groups,
+
+19
+00:00:41,000 --> 00:00:44,585
+so the total time for this step is order n. Now,
+
+20
+00:00:44,585 --> 00:00:48,820
+we're going to run this same algorithm recursively on this subset S,
+
+21
+00:00:48,820 --> 00:00:50,450
+which is of size n over five.
+
+22
+00:00:50,450 --> 00:00:51,740
+So how long does that take?
+
+23
+00:00:51,740 --> 00:00:56,285
+That takes us T of n over five since its subset is of size n over five.
+
+24
+00:00:56,284 --> 00:00:58,639
+Now we partition A into these three subsets,
+
+25
+00:00:58,640 --> 00:01:02,829
+that takes one swipe through the array A that also takes order n time,
+
+26
+00:01:02,829 --> 00:01:07,250
+then finally we recurse on one of these smaller subproblems.
+
+27
+00:01:07,250 --> 00:01:09,364
+How large are the subproblems?
+
+28
+00:01:09,364 --> 00:01:12,019
+Well, since P is guaranteed to be a good pivot,
+
+29
+00:01:12,019 --> 00:01:15,409
+we know that these subproblems are of size at most three-fourths
+
+30
+00:01:15,409 --> 00:01:19,144
+n. So our running time satisfies the following recurrence.
+
+31
+00:01:19,144 --> 00:01:21,034
+We have three-fourths n,
+
+32
+00:01:21,034 --> 00:01:25,640
+we have n over five for finding this median of this subset S,
+
+33
+00:01:25,640 --> 00:01:28,655
+and then plus we have order n for several of these steps.
+
+34
+00:01:28,655 --> 00:01:32,290
+The key is that three-fourths plus one-fifth is 0.95,
+
+35
+00:01:32,290 --> 00:01:34,250
+which is strictly less than one.
+
+36
+00:01:34,250 --> 00:01:37,594
+So this recurrence solves too order n,
+
+37
+00:01:37,594 --> 00:01:39,609
+and we have an order n time algorithm.
+
